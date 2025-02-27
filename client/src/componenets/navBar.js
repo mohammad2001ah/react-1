@@ -9,7 +9,6 @@ function NavBar(){
     </ul>
      */}
     <h1>this is navbar</h1>
-    
     </>
   )
 }

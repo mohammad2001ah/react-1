@@ -10,14 +10,20 @@ import React,{useState,useEffect} from 'react';
 function App() {
   //state for input
   const [inputValue,setInputValue]=useState('');
+
   const [todos,setTodos]=useState(getFromLocalStorage('todos')||[]);
+  /*
+  useEffect(()=>{do any thing},[states])
+  */
+
   useEffect(()=>{
-    saveToLocalStorage('todos',todos)
+    saveToLocalStorage('todos',todos)//(key,value)
     console.log('todos',todos)
   },[todos])
+
   const handelAdd=()=>{
     setTodos ([...todos,inputValue]);
-    saveToLocalStorage('todos',todos)
+    //saveToLocalStorage('todos',todos)
   }
   return (
     <div className="App">
