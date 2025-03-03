@@ -4,13 +4,13 @@ import Title from './componenets/Title';
 import Button from './componenets/Button';
 import Input from './componenets/Input';
 import TodoList from './componenets/TodoList';
+
 import { saveToLocalStorage,getFromLocalStorage } from './utils/storage';
 import React,{useState,useEffect} from 'react';
 
 function App() {
   //state for input
   const [inputValue,setInputValue]=useState('');
-
   const [todos,setTodos]=useState(getFromLocalStorage('todos')||[]);
   /*
   useEffect(()=>{do any thing},[states])
@@ -23,7 +23,6 @@ function App() {
 
   const handelAdd=()=>{
     setTodos ([...todos,inputValue]);
-    //saveToLocalStorage('todos',todos)
   }
   return (
     <div className="App">
