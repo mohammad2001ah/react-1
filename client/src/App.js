@@ -37,6 +37,7 @@ function App() {
       <Routes>
         <Route path ='/navBar' element={<NavBar/>}/>
         <Route path='/' element={<MediaCard/>}/>
+        
       </Routes>
     </BrowserRouter>
   );

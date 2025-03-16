@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid, Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
+import { Grid, Card, CardActions, CardContent, CardMedia, Button, Typography, TextField, Box } from '@mui/material';
 
 export default function MediaCard() {
   const [cardsData, setCardsData] = React.useState([
@@ -15,20 +15,48 @@ export default function MediaCard() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); 
-    if (!formData.title || !formData.description || !formData.image) return; 
-    setCardsData([...cardsData, formData]); 
-    setFormData({ title: "", description: "", image: "" }); 
+    e.preventDefault();
+    if (!formData.title || !formData.description || !formData.image) return;
+    setCardsData([...cardsData, formData]);
+    setFormData({ title: "", description: "", image: "" });
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="title" placeholder="Title" value={formData.title} onChange={handleChange} autoFocus />
-        <input type="text" name="description" placeholder="Description" value={formData.description} onChange={handleChange} />
-        <input type="text" name="image" placeholder="Image URL" value={formData.image} onChange={handleChange} />
-        <button type="submit">Add</button>
-      </form>
+    <Box sx={{ p: 3 }}>
+      <Card sx={{ maxWidth: 400, mx: "auto", mb: 4, p: 2, boxShadow: 3 }}>
+        <CardContent>
+          <Typography variant="h6" gutterBottom>Add New Card</Typography>
+          <form onSubmit={handleSubmit}>
+            <TextField
+              fullWidth
+              label="Title"
+              name="title"
+              value={formData.title}
+              onChange={handleChange}
+              margin="normal"
+            />
+            <TextField
+              fullWidth
+              label="Description"
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              margin="normal"
+            />
+            <TextField
+              fullWidth
+              label="Image URL"
+              name="image"
+              value={formData.image}
+              onChange={handleChange}
+              margin="normal"
+            />
+            <Button type="submit" variant="contained" sx={{ mt: 2 }} fullWidth>
+              Add Card
+            </Button>
+          </form>
+        </CardContent>
+      </Card>
 
       <Grid container spacing={3} justifyContent="center">
         {cardsData.map((card, index) => (
@@ -47,6 +75,6 @@ export default function MediaCard() {
           </Grid>
         ))}
       </Grid>
-    </>
+    </Box>
   );
 }
