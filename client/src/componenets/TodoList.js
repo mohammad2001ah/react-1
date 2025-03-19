@@ -1,11 +1,34 @@
 import React from "react";
-const TodoList =({todos})=>(
-  <ul>
-    {/* {todos} */}
-    {/* this line of code mean make loop to access all indext and addedd to list  */}
-    {todos.map((y,index)=>
-    <li key={index}>{y}</li>
-    )}
-  </ul>
-)
-export default TodoList;
+import { useState } from "react";
+function createInitialTodos(){
+  const initialTodos=[];
+  for(let i; i<50;i++){
+    initialTodos.push({
+      id:i,text:"item"+(i+1)
+    });
+  }
+  return initialTodos;
+}
+export default function TodoList(){
+  const [todos,setTodos]=useState(createInitialTodos);
+  const [text,setText]=useState("");
+  return(
+    <>
+    <input value={text} onChange={(e)=>setText(e.target.value)}/>
+    <button onClick={()=>{
+      if(todos.length>=50){
+        alert("the end")
+        return;
+      }
+      setText("");
+      setTodos([{
+        id:todos.length,
+        text:text},...todos])}}> Add</button>
+        <ul>
+          {todos.map(item=>(
+            <li key={item.id}>{item.text}</li>
+          ))}
+        </ul>
+    </>
+  )
+}

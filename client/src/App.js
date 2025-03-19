@@ -8,23 +8,25 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import { saveToLocalStorage,getFromLocalStorage } from './utils/storage';
 import React,{useState,useEffect} from 'react';
 import MediaCard from './componenets/cards';
+import Clothes from './componenets/Clothes';
+import ResponsiveGrid from './componenets/cards';
 
 function App() {
-  //state for input
-  const [inputValue,setInputValue]=useState('');
-  const [todos,setTodos]=useState(getFromLocalStorage('todos')||[]);
-  /*
-  useEffect(()=>{do any thing},[states])
-  */
+  // //state for input
+  // const [inputValue,setInputValue]=useState('');
+  // const [todos,setTodos]=useState(getFromLocalStorage('todos')||[]);
+  // /*
+  // useEffect(()=>{do any thing},[states])
+  // */
 
-  useEffect(()=>{
-    saveToLocalStorage('todos',todos)//(key,value)
-    console.log('todos',todos)
-  },[todos])
+  // useEffect(()=>{
+  //   saveToLocalStorage('todos',todos)//(key,value)
+  //   console.log('todos',todos)
+  // },[todos])
 
-  const handelAdd=()=>{
-    setTodos ([...todos,inputValue]);
-  }
+  // const handelAdd=()=>{
+  //   setTodos ([...todos,inputValue]);
+  // }
   return (
     // <div className="App">
     //   <NavBar/>
@@ -35,8 +37,11 @@ function App() {
     // </div>
     <BrowserRouter>
       <Routes>
-        <Route path ='/navBar' element={<NavBar/>}/>
-        <Route path='/' element={<MediaCard/>}/>
+        {/* <Route path ='/navBar' element={<NavBar/>}/>
+        <Route path='/' element={<MediaCard/>}/> */}
+        {/* <Route path='/' element={<TodoList/>}/> */}
+        <Route path='/' element={<ResponsiveGrid/>}/>
+        
         
       </Routes>
     </BrowserRouter>
