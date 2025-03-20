@@ -10,6 +10,7 @@ import React,{useState,useEffect} from 'react';
 import MediaCard from './componenets/cards';
 import Clothes from './componenets/Clothes';
 import ResponsiveGrid from './componenets/cards';
+import Moh from './componenets/moh';
 
 function App() {
   // //state for input
@@ -40,7 +41,7 @@ function App() {
         {/* <Route path ='/navBar' element={<NavBar/>}/>
         <Route path='/' element={<MediaCard/>}/> */}
         {/* <Route path='/' element={<TodoList/>}/> */}
-        <Route path='/' element={<ResponsiveGrid/>}/>
+        <Route path='/' element={<Moh/>}/>
         
         
       </Routes>
