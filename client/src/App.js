@@ -11,6 +11,7 @@ import MediaCard from './componenets/cards';
 import Clothes from './componenets/Clothes';
 import ResponsiveGrid from './componenets/cards';
 import Moh from './componenets/moh';
+import { Card } from '@mui/material';
 
 function App() {
   // //state for input
@@ -41,7 +42,7 @@ function App() {
         {/* <Route path ='/navBar' element={<NavBar/>}/>
         <Route path='/' element={<MediaCard/>}/> */}
         {/* <Route path='/' element={<TodoList/>}/> */}
-        <Route path='/' element={<Moh/>}/>
+        <Route path='/' element={<ResponsiveGrid/>}/>
         
         
       </Routes>
