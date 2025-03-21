@@ -19,6 +19,7 @@ export default function Moh() {
     setUsers([...users, { id: indexId, username: newUsername, isEditing: false }]);
     indexId++; 
     setNewUsername("");
+    
   }
 
   function editUser(id) {

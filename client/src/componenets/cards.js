@@ -62,7 +62,7 @@ export default function ResponsiveGrid() {
                     {card.title}
                   </Typography>
                   <Typography gutterBottom variant="h5" component="div">
-                    ID: {card.id}
+                    {card.id}
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                     {card.descreption}

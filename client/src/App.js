@@ -12,6 +12,7 @@ import Clothes from './componenets/Clothes';
 import ResponsiveGrid from './componenets/cards';
 import Moh from './componenets/moh';
 import { Card } from '@mui/material';
+import Counter from './componenets/application';
 
 function App() {
   // //state for input
@@ -42,7 +43,8 @@ function App() {
         {/* <Route path ='/navBar' element={<NavBar/>}/>
         <Route path='/' element={<MediaCard/>}/> */}
         {/* <Route path='/' element={<TodoList/>}/> */}
-        <Route path='/' element={<ResponsiveGrid/>}/>
+        {/* <Route path='/' element={<ResponsiveGrid/>}/> */}
+        <Route path='/' element={<Counter/>}/>
         
         
       </Routes>
